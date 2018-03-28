@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="basic.css" rel="stylesheet">
+<title> c site</title>
+</head>
+<body background-image="url(01.jpg)">
+
+<p id="null">null</p>
+<div id="follow">
+<p>google+</p><br>
+<p>facebook</p><br>
+<p>twitter</p>
+</div>
+<img id="logo"src="images/c.png">
+<ul id="navigation">
+<li><a href="introduction.html">Introduction</a></li>
+<li><a href="io.html">Input Output</a></li>
+<li><a href="datatypes.html">Data Types</a></li>
+<li><a href="key.html">Keywords and Identifiers</a> </li>
+<li><a href="constant.html">Constants and Variables</a></li>
+<li><a href="operators.html">Operators</a></li>
+<li><a href="pages/decision.html">Decision Control Statement</a></li>
+<li><a href="pages/loop.html">Loop Control Statement</a></li>
+<li><a href="pages/case.html">Case Control Statement</a></li>
+<li><a href="pages/storage.html">Storage Class Specifiers</a></li>
+<li><a href="pages/function.html">Functions</a></li>
+<li><a href="pages/array.html">Arrays</a></li>
+<li><a href="pages/string.html">Strings</a></li>
+<li><a href="pages/dynamic.html">Dynamic Memory Allocation</a></li>
+<li><a href="pages/structure.html">Structure and Union</a></li>
+<li><a href="pages/files.html">Files</a></li>
+<li><a href="pages/low.html">Low Input and Output</a></li>
+</ul>
+<div id="content"><pre>
+<h2><center><u> C Input and Output</u></h2>
+<h3><u>Printf  and Scanf </u></h3>
+The printf() and scanf() functions are used for 
+input and output in C language. Both functions
+are inbuilt library functions, defined in stdio.h.
+
+<h3><u>printf() function</u></h3>
+The printf() function is used for output. It prints 
+the given statement to the console.printf() function
+is used to print the “character, string,float, integer,
+octal and hexadecimal values” onto the output screen.
+We use printf() function with %d format specifier
+to display the value of an integer variable.
+	To generate a newline,we use “\n” in 
+C printf() statement. The syntax of printf() function
+is given below:
+<b>1.	printf("format string",argument_list);</b>
+The format string can be %d (integer), %c (character),
+%s (string),%f (float) etc.
+
+<h3><u>scanf() function</u></h3>
+The scanf() function is used for input. It reads
+the input data from the console.scanf() function
+is used to read character, string, numeric data
+from keyboard.
+
+<b>1.	scanf("format string",argument_list);</b>  
+
+<h3> scanf() and printf() functions</h3>
+
+<code>#include&lt;stdio.h&gt;
+int main()
+{
+ int i;
+ printf("Enter a value\n");
+ scanf("%d",&i);
+ printf( "You entered: %d",i);
+ return 0;
+}</code>
+
+The scanf("%d",&i) statement reads integer number from
+the console and stores the given value in i variable.The
+printf("You entered: %d ",i) statement prints the number
+on the console.
+
+<h3><u>getchar() & putchar() functions</u></h3>
+The getchar() function reads a character from the terminal
+and returns it as an integer. This function reads only
+single character at a time.You can use this method in the
+loop in case you want to read more than one characters.
+	The putchar() function prints the character passed to
+it on the screen and returns the same character. This
+function puts only single character at a time. In case
+you want to display more than one characters,use putchar()
+method in the loop.
+<code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+void main( )
+{
+ int c;
+ printf("Enter a character");
+ c=getchar();
+ putchar(c);
+ getch();
+}</code>
+<h3><u>gets() & puts() functions</u></h3>
+The gets() function reads a line from stdin into the
+buffer pointed to by s until either a terminating 
+newline or EOF (end of file).The puts()function writes
+the string s and a trailing newline to stdout.
+<code>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+void main()
+{
+ char str[100];
+ printf("Enter a string");
+ gets( str );
+ puts( str );
+ getch();
+}
+</code>
+<h3><u>Difference between scanf() and gets()</u></h3>
+The main difference between these two functions is that
+scanf() stops reading characters when it encounters a space, 
+but gets() reads space as character too.If you enter name as
+C Programming using scanf() it will only read and store C 
+and will leave the part after space. But gets() function
+will read it completely.
+
+</pre>
+</div>
+
+<span class="prev"><a href="introduction.html">Back</a></span>
+<span class="home"><a href="first.html"><img src="images/hi.png" width="50px"></a></span>
+<span class="next"><a href="datatypes.html">Next</a></span>
+
+<p id="extra">extra</p>
+<p id="bottom">bottom</p>
+</body>
+</html>

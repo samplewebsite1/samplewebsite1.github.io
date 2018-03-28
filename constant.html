@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="basic.css" rel="stylesheet">
+<title> c site</title>
+</head>
+<body background-image="url(01.jpg)">
+
+<p id="null">null</p>
+<div id="follow">
+<p>google+</p><br>
+<p>facebook</p><br>
+<p>twitter</p>
+</div>
+<img id="logo"src="images/c.png">
+<ul id="navigation">
+<li><a href="introduction.html">Introduction</a></li>
+<li><a href="io.html">Input Output</a></li>
+<li><a href="datatypes.html">Data Types</a></li>
+<li><a href="key.html">Keywords and Identifiers</a> </li>
+<li><a href="constant.html">Constants and Variables</a></li>
+<li><a href="operators.html">Operators</a></li>
+<li><a href="decision.html">Decision Control Statement</a></li>
+<li><a href="loop.html">Loop Control Statement</a></li>
+<li><a href="case.html">Case Control Statement</a></li>
+<li><a href="storage.html">Storage Class Specifiers</a></li>
+<li><a href="function.html">Functions</a></li>
+<li><a href="array.html">Arrays</a></li>
+<li><a href="string.html">Strings</a></li>
+<li><a href="dynamic.html">Dynamic Memory Allocation</a></li>
+<li><a href="structure.html">Structure and Union</a></li>
+<li><a href="files.html">Files</a></li>
+<li><a href="low.html">Low Input and Output</a></li>
+</ul>
+<div id="content">
+<pre>
+
+<h2><u>Constants and Variables</u></h2>
+<h3><u>Variables</u></h3>
+Variables are memory location in computer's memory 
+to store data. To indicate the memory location, each 
+variable should be given a unique name called 
+identifier. Variable names are just the symbolic 
+representation of a memory location. 
+Examples of variable name: sum, car_no, count etc.
+	1.The value of the C variable may get change in 
+the program.
+	2.C variable might be belonging to any of the 
+data type like int, float, char etc.
+Example:int num;
+Here, num is a variable of integer type.
+
+<h3><u>Rules for naming C variable:</u></h3>
+1.	Variable name must begin with letter or 
+underscore.
+2.	Variables are case sensitive
+3.	They can be constructed with digits, letters.
+4.	No special symbols are allowed other than 
+underscore.
+5.	sum, height, _value are some examples for 
+variable name
+<h3><u>Declaring & initializing C variable:</u></h3>
+	1.Variables should be declared in the C program 
+before to use.
+	Memory space is not allocated for a variable 
+while declaration. It happens only on variable 
+definition.
+	Variable initialization means assigning a value 
+to the variable.
+<img src="">
+There are three types of variables in C program they are,
+1.	Local variable
+2.	Global variable
+3.	Environment variable
+<h3><u>Local variable in C:</u></h3>
+	1.The scope of local variables will be within 
+the function only.
+	2.These variables are declared within the 
+function and can’t be accessed outside the function.
+	3.In the below example, m and n variables are 
+having scope within the main function only. 
+These are not visible to test function.
+	4.Like wise, a and b variables are having scope 
+within the test function only.These are not visible 
+to main function.
+#include&lt;stdio.h&gt;
+int main()
+{
+int m = 22, n = 44; /* m, n are local variables 
+of main function*/
+
+printf(“\nvalues : m = %d and n = %d”, m, n);
+ }
+Output:
+values : m = 22 and n = 44
+
+<h3><u>2.Global variable in C:</u></h3>
+	1.The scope of global variables will be 
+throughout the program. These variables can be 
+accessed from anywhere in the program.
+	2.This variable is defined outside the main 
+function. So that, this variable is visible to main 
+function and all other sub functions.
+<code>
+#include&lt;stdio.h&gt;
+int m = 22, n = 44;
+ int main()
+{
+printf(“All variables accessed from main function”);
+printf(“\nvalues: m=%d:n=%d”, m,n);
+return 0;
+}</code>
+Output:
+All variables are accessed from main function
+values : m = 22 : n = 44
+
+<h3><u> Environment variables in C:</u></h3>
+	1.Environment variable is a variable that will 
+be available for all C applications and C programs.
+	2.We can access these variables from anywhere in 
+a C program without declaring and initializing in an 
+application or C program.
+	3.The inbuilt functions which are used to access,
+modify and set these environment variables are called 
+environment functions.
+	4.There are 3 functions which are used to access, 
+modify and assign an environment variable in C. 
+They are,
+1. setenv()
+2. getenv()
+3. putenv()
+<b>Example program for getenv() function in C:</b>
+This function gets the current value of the 
+environment variable. Let us assume that environment 
+variable DIR is assigned to “/usr/bin/test/”.
+<code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main()
+{
+printf(“Directory = %s\n”,getenv(“DIR”));
+return 0;
+}</code>
+Output:
+Directory = /usr/bin/test/
+<b>Example program for setenv() function in C:</b>
+This function sets the value for environment 
+variable. Let us assume that environment variable 
+“FILE” is to be assigned “/usr/bin/example.c”
+<code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main()
+{
+setenv(“FILE”, “/usr/bin/example.c”,50);
+printf(“File = %s\n”, getenv(“FILE”));
+return 0;
+}</code>
+Output:
+File = /usr/bin/example.c
+
+<b>Example program for putenv() function in C:</b>
+This function modifies the value for environment 
+variable. Below example program shows that how to 
+modify an existing environment variable value.
+<code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main()
+{
+setenv(“DIR”, “/usr/bin/example/”,50);
+printf(“Directory name before modifying = ” \
+“%s\n”, getenv(“DIR”));
+putenv(“DIR=/usr/home/”);
+printf(“Directory name after modifying = ” \
+“%s\n”, getenv(“DIR”));
+return 0;
+}</code>
+Output:
+Directory name before modifying = /usr/bin/example/
+Directory name after modifying = /usr/home/
+
+
+
+
+Difference between variable declaration & 
+definition in C:
+<img src="">
+
+<h3><u>Constants</u></h3>
+	Constants are the fixed valuesor terms that 
+can't be changed during the execution of a program.
+	These fixed values are also called literals.
+<b>Syntax: const data_type variable_name;</b>
+ (or)
+<b>const data_type *variable_name;</b>
+For example: 1, 2.5, "Programming." etc. 
+In C, constants can be classified as:
+<h4><u>1.Integer constants</u></h4>
+Integer constants are the numeric constants 
+(constant associated with number) without any 
+fractional part or exponential part. 
+There are three types of integer constants:
+decimal constant (base 10), 
+octal constant (base 8) 
+hexadecimal constant (base 16).
+Decimal digits: 0 1 2 3 4 5 6 7 8 9
+Octal digits: 0 1 2 3 4 5 6 7
+Hexadecimal digits: 0 1 2 3 4 5 6 7 8 9 A B C D E F.
+For example:
+Decimal constants: 0, -9, 22 etc
+Octal constants: 021, 077, 033 etc
+Hexadecimal constants: 0x7f, 0x2a, 0x521 etc
+Notes:
+	1.You can use small caps a, b, c, d, e, f 
+instead of uppercase letters while writing a 
+hexadecimal constant.
+2.Every octal constant starts with 0 and 
+hexadecimal constant starts with 0x. 
+
+<h4><u>2.Floating-point constants</u></h4>
+Floating point constants are the numeric constants
+that has either fractional form or exponent form. 
+For example:
+-2.0
+0.0000234
+-0.22E-5
+Note:Here, E-5 represents 10^(-5). 
+Thus, -0.22E-5 = -0.0000022.
+
+<h4><u>3. Character constants</u></h4>
+Character constants are the constant which use 
+single quotation around characters. 
+For example: 'a', 'l', 'm', 'F' etc.
+
+<b>Escape Sequences</b>
+Sometimes, it is necessary to use newline(enter), 
+tab, quotation mark etc. in the program which either 
+cannot be typed or has special meaning in C 
+programming. In such cases, escape sequence are 
+used. For example: \n is used for newline. The 
+backslash( \ ) causes "escape" from the normal way 
+the characters are interpreted by the compiler.
+<img src="">
+<h4><u>4. String constants</u></h4>
+String constants are the constants which are enclosed in a pair of double-quote marks. For example:
+"good" //string constant
+""     //null string constant
+"  "//string constant of three white space
+"x" //string constant having single character.
+"Earth is round\n" //prints string with newline
+<h4><u>5. Enumeration constants</u></h4>
+Keyword enum is used to declare enumeration types. 
+For example:
+enum color {yellow, green, black, white};
+Here, the variable name is color and yellow, green, 
+black and white are the enumeration constants having 
+value 0, 1, 2 and 3 respectively by default.
+How to use constants in a C program?
+We can define constants in a C program in the 
+following ways.
+1.	By “const” keyword
+2.	By “#define” preprocessor directive
+Please note that when you try to change constant 
+values after defining in C program, it will through 
+error.
+1. Example program using const keyword in C:
+<code>
+#include &lt;stdio.h&gt;
+void main()
+{
+const int height = 100; /*int constant*/
+const float number = 3.14;/*Real constant*/
+const char letter = ‘A’;/*char constant*/
+const char letter_sequence[10] = “ABC”;/*string*/
+const char backslash_char = ‘\?’   /*special char cnst*/
+printf(“value of height :%d \n”, height );
+printf(“value of number : %f \n”, number );
+printf(“value of letter : %c \n”, letter );
+printf(“value of letter_sequence : %s \n”,letter_sequence);
+printf(“value of backslash_char : %c \n”, backslash_char);
+}</code>
+Output:
+value of height : 100
+value of number : 3.140000
+value of letter : A
+value of letter_sequence : ABC
+value of backslash_char : ?
+
+</pre>
+
+</div>
+
+<span class="prev"><a href="">Back</a></span>
+<span class="home"><a href=""><img src="images/hi.png" width="50px"></a></span>
+<span class="next"><a href="">Next</a></span>
+
+<p id="extra">extra</p>
+<p id="bottom">bottom</p>
+</body>
+</html>
